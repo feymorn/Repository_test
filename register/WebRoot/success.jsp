@@ -22,8 +22,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
   <p>来到success.jsp</p>
-  <%pageContext.setAttribute("a","page scope") ;%>
-  java_page scope:<%=pageContext.getAttribute("a")%><br>
+ 
+ 
  java_request scop:<%=request.getAttribute("password") %><br>
   java_session scop:<%=session.getAttribute("abc")%><br>
   
