@@ -42,7 +42,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <c:forEach var="a" items="${session}" varStatus="status">
     <tr>
-     <c:out value="${session.abc}" default="空"/>
+     <c:out value="${session.abc}" default="空  "/>
     </tr>
   
   </c:forEach>
