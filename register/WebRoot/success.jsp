@@ -1,4 +1,5 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" import="com.scdx.bean.*" pageEncoding="utf-8"%>
+
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -24,7 +25,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <p>来到success.jsp</p>
  
  
- java_request scop:<%=request.getAttribute("password") %><br>
+ java_request scop:<%=request.getAttribute("list") %><br>
+ 
+ <%
+ //	List list=request.getAttribute("list");
+ //	int len=list.size();
+ 
+  %>
+ 
+ 
+ 
   java_session scop:<%=session.getAttribute("abc")%><br>
   
   <%= this.getServletContext().getAttribute("app") %><br>

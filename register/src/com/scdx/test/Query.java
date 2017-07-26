@@ -1,6 +1,7 @@
 package com.scdx.test;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -37,9 +38,11 @@ public class Query extends HttpServlet {
 			System.out.println("已获得查询关键词:"+keyword);
 			User u=new User();
 			UserDao ud=new UserDao();
-			u=ud.query(keyword);
-			
-		
+			//u=ud.query(keyword);
+			List list=ud.getUserList();
+		    request.setAttribute("list", list);
+		    System.out.println("list列表信息:"+list);
+		    System.out.println("已经在request中设置list对象");
 			System.out.println("Query.doGet已获得返回的用户名:"+u.getUsername());
 			System.out.println("Query.doGet已获得返回的密码:"+u.getPassword());
 			request.setAttribute("username", u.getUsername());

@@ -20,13 +20,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	function pwdIdent(){
 	   var pwd1=document.getElementById("password").value;
 	   var pwd2=document.getElementById("repassword").value;
-	   window.alert("哎呀")
-	   if(pwd==""){
+	  
+	   if(pwd1==""){
 	   alert("please input a valid password");
+	   signupForm.password.focus();
+	   return false;
 	   }else if(pwd1!=pwd2){
-	    alert("The last password of input did't identify first")
-	    signupForm.repassword.focus();
+	    alert("Your password and confirmed password do not match.")
+	  signupForm.repassword.focus();
+	    return false;
+	    
+	    
 	   } else if(pwd1==pwd2){
+		   return true;
 	     
 	   }
 	}
@@ -52,9 +58,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
              <td><input type="password" name="repassword" id="repassword"> </td>
          </tr>
        </table>
-      <button type="submit" onclick="pwdIdent()">登陆</button>
+      <button type="submit" onclick="return pwdIdent() ">登陆</button>
     </form>
     
     <a href="login.jsp">已有账户，直接登陆</a>
+    <a href="seacher.html">查询</a>
   </body>
 </html>
